@@ -81,10 +81,9 @@ for i in valid:
                         'Subject: %s' % SUBJECT,
                         '', TEXT])
     
-    #try:
+
     server.sendmail(gmail_sender, [TO], BODY)
     print (f'email sent to {i}')
-    #except:
-    print ('error sending mail')
+
 
 server.quit()
