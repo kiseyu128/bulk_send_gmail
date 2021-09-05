@@ -67,14 +67,13 @@ As a television personality, virtues like magnanimity should always be demonstra
 Your attention to this matter is always highly appreciated.\n
 Best regards """
 
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.ehlo()
+server.starttls()
+server.login(gmail_sender, gmail_passwd)
 
 for i in valid:
     TO = i
-    
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-    server.login(gmail_sender, gmail_passwd)
     
     BODY = '\r\n'.join(['To: %s' % TO,
                         'From: %s' % gmail_sender,
